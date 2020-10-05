@@ -1,6 +1,5 @@
 from django.urls import path
-from django.shortcuts import redirect
-from .views import post_view, like_post, redirect_view
+from .views import post_view, like_post
 
 app_name = 'posts'
 

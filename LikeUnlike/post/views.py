@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Post, Like
 from django.contrib.auth.decorators import login_required
 
+
 # Create your views here.
 def post_view(request):
     qs = Post.objects.all()
@@ -13,6 +14,7 @@ def post_view(request):
     }
 
     return render(request, 'post/main.html', context)
+
 
 @login_required
 def like_post(request):
@@ -35,8 +37,8 @@ def like_post(request):
         else:
             like.value = 'Like'
     like.save()
-
     return redirect('posts:post-list')
+
 
 def redirect_view(request):
     return redirect('/admin/login')
